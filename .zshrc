@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="intheloop"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,7 +82,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
 
 ### Tom’s Stuff 
-export EDITOR='sublime'
+export EDITOR='vim'
 unsetopt share_history
 
 # Allow up/down arrow in  CTRL-R  (Same as CTRL-R/S)
@@ -97,6 +97,9 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 # Sets the working directory for all virtualenvs
 export WORKON_HOME=$HOME/.virtualenvs
 
+# Set the java location (http://stackoverflow.com/questions/1348842/what-should-i-set-java-home-to-on-osx)
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Sources the virtualenvwrapper so all the commands are available in the shell
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -104,18 +107,18 @@ export MAVEN_OPTS="-Xmx4096m -Xss1024m -XX:MaxPermSize=128m"
 export ANT_OPTS="-Xmx4096m -Xss1024m"
 
 # Workspace shortcuts
-alias bigsky="cd ~/Development/bigsky"
+alias bigsky="cd ~/Workspace/bigsky"
 alias bs="bigsky"
-alias reference-viewer="cd ~/Development/wf-js-reference-viewer"
-alias common="cd ~/Development/wf-common"
-alias uicomponents="cd ~/Development/wf-uicomponents"
-alias viewer="cd ~/Development/wf-js-viewer"
-alias annotations="cd ~/Development/wf-js-annotations"
-alias docviewer="cd ~/Development/wf-js-document-viewer"
-alias viewer-services="cd ~/Development/wf-viewer-services"
-alias server_composition='cd ~/Development/server_composition'
-alias server-composition='cd ~/Development/server_composition'
-alias wDOM='cd ~/Development/wDOM'
+alias reference-viewer="cd ~/Workspace/wf-js-reference-viewer"
+alias common="cd ~/Workspace/wf-common"
+alias uicomponents="cd ~/Workspace/wf-uicomponents"
+alias viewer="cd ~/Workspace/wf-js-viewer"
+alias annotations="cd ~/Workspace/wf-js-annotations"
+alias docviewer="cd ~/Workspace/wf-js-document-viewer"
+alias viewer-services="cd ~/Workspace/wf-viewer-services"
+alias server_composition='cd ~/Workspace/server_composition'
+alias server-composition='cd ~/Workspace/server_composition'
+alias wDOM='cd ~/Workspace/wDOM'
 # End workspace shortcuts
 
 # Bower shortcuts
@@ -133,8 +136,8 @@ alias bigsky-server="which bigsky-server && workon sky; (python manage.py runser
 alias bss='bigsky-server'
 
 ## https://github.com/Workiva/bigsky/blob/master/auth/models.py#L736
-alias reset-environment="which reset-environment && bsmyaccount && python tools/erase_reset_data.py --admin='tom' --password='blerg'"
-alias reset-admin="which reset-admin && python tools/remote_api/create_test_docs.py --nodocuments --admin='tom' --password='blerg' --servername=localhost:8001"
+alias reset-environment="which reset-environment && bsmyaccount && python tools/erase_reset_data.py --admin='george' --password='blerg'"
+alias reset-admin="which reset-admin && python tools/remote_api/create_test_docs.py --nodocuments --admin='george' --password='blerg' --servername=localhost:8001"
 alias reset-environment-with-features="reset-environment --enabled_settings=enable_presentations,enable_doc_viewer,enable_charts,enable_two_column,enable_risk,enable_csr,enable_books_viewer_comments,enable_books_viewer_shared_comments,enable_table_bullets"
 
 
@@ -165,35 +168,35 @@ alias pfz='pip freeze'
 alias zshrc='sublime ~/.zshrc'
 alias zshrc-source='. ~/.zshrc'
 
-alias bsmyaccount="echo Tom,Connell,tom,blerg,,Workiva,tom.connell@workiva.com,666-666-6667,555-555-5556,444-444-4445,333-333-3334,2131 North Loop Drive,,,Ames,IA,50011 > ~/Development/bigsky/tools/bulkdata/accounts.csv"
-### End Tom’s Stuff
+alias bsmyaccount="echo George,Lesica,george,blerg,,Workiva,george.lesica@workiva.com,666-666-6667,555-555-5556,444-444-4445,333-333-3334,2131 North Loop Drive,,,Ames,IA,50011 > ~/Workspace/bigsky/tools/bulkdata/accounts.csv"
+### End personal stuff
 
 
 
 ### Stock Aliases
 # Alias all the repos - These minimize the typing you need to do to get to your dev enivronments
-alias ws='cd ~/Development'
-alias dv='cd ~/Development/wf-js-document-viewer'
-alias docviewer='cd ~/Development/wf-js-document-viewer'
-alias devtools='cd ~/Development/dev-tools'
-alias bs='cd ~/Development/bigsky'
-alias ss='cd ~/Development/smallsky'
-alias ssc='cd ~/Development/server_composition'
+alias ws='cd ~/Workspace'
+alias dv='cd ~/Workspace/wf-js-document-viewer'
+alias docviewer='cd ~/Workspace/wf-js-document-viewer'
+alias devtools='cd ~/Workspace/dev-tools'
+alias bs='cd ~/Workspace/bigsky'
+alias ss='cd ~/Workspace/smallsky'
+alias ssc='cd ~/Workspace/server_composition'
 alias smallsky='ss'
-alias ui='cd ~/Development/wf-uicomponents'
-alias anno='cd ~/Development/wf-js-annotations'
-alias bsrv='cd ~/Development/bigsky/apps/rv'
-alias books='cd ~/Development/books'
-alias rv='cd ~/Development/wf-js-reference-viewer'
-alias vw='cd ~/Development/wf-js-viewer'
-alias viewer='cd ~/Development/wf-js-viewer'
-alias common='cd ~/Development/wf-common'
-alias vs='cd ~/Development/wf-viewer-services'
+alias ui='cd ~/Workspace/wf-uicomponents'
+alias anno='cd ~/Workspace/wf-js-annotations'
+alias bsrv='cd ~/Workspace/bigsky/apps/rv'
+alias books='cd ~/Workspace/books'
+alias rv='cd ~/Workspace/wf-js-reference-viewer'
+alias vw='cd ~/Workspace/wf-js-viewer'
+alias viewer='cd ~/Workspace/wf-js-viewer'
+alias common='cd ~/Workspace/wf-common'
+alias vs='cd ~/Workspace/wf-viewer-services'
 alias viewers='vs'
-alias annos='cd ~/Development/wf-annotation-services'
-alias paw='cd ~/Development/wf-js-paw'
-alias pitcher='cd ~/Development/wf-pitcher'
-alias catcher='cd ~/Development/wf-catcher'
+alias annos='cd ~/Workspace/wf-annotation-services'
+alias paw='cd ~/Workspace/wf-js-paw'
+alias pitcher='cd ~/Workspace/wf-pitcher'
+alias catcher='cd ~/Workspace/wf-catcher'
 
 ## Misc
 alias bower='noglob bower' # Prevent the shell from expanding things like * for bower commands
@@ -210,7 +213,7 @@ alias bslinkbooksassets='workon sky && ./tools/link_assets.py wf.apps.books asse
 alias bsbookspip='workon sky && { pip uninstall -y wf-books; pip install -e ../books; } && ant link-libs && bslinkbooksassets'  # links your local copy of books into BigSky
 # https://wiki.webfilings.com/display/DEV/How+to+Upload+and+Enable+Fonts
 alias bsfonts='workon sky && python tools/remote_api/upload_font.py ../font/fonts/general --wf-enable; bell'
-alias killvenv="rm -rf $WORKON_HOME/sky && bs && mkvirtualenv sky -a /Users/tomconnell/Development/bigsky"
+alias killvenv="rm -rf $WORKON_HOME/sky && bs && mkvirtualenv sky -a /Users/tomconnell/Workspace/bigsky"
 
 alias sky="workon sky"
 alias skyup="workon sky && git checkout master && git pull && git pull wf-origin master && git submodule update --init && pip install -Ur requirements_dev.txt" # Updates bigsky and all the dev requirements.  Production would just use requrements.txt.
@@ -259,9 +262,6 @@ alias loadfonts="workon bigsky && bigsky && python tools/remote_api/upload_font.
 alias lasttag="git describe --tags --abbrev=0"
 
 ## Setup HVR
-alias bslinkdocviewerassets='bs && workon sky && ./tools/link_assets.py sky.docviewer assets'
-alias bsdocviewerpip='workon sky && { pip uninstall -y sky-docviewer; pip install -e ../wf-js-document-viewer; } && ant link-libs && bslinkdocviewerassets'
-alias bsdocviewerinstall='bslinkdocviewerassets && bsdocviewerpip'
 
 
 
@@ -290,10 +290,38 @@ alias bspipssc='bsrepip server-composition server_composition'
 alias bslinkdocviewerassets='workon sky && ./tools/link_assets.py sky.docviewer assets'
 alias bspipdocviewer='bsrepip sky-docviewer wf-js-document-viewer && bslinkdocviewerassets'
 
-alias bslinkbooksassets='workon sky && ./tools/link_assets.py wf.apps.books assets'
 alias bspipbooks='bsrepip wf-books books && bslinkbooksassets'
 
 
 
 ### End Stock Aliases
 
+# Bigsky
+alias bs='cd ~/Workspace/bigsky && workon sky'
+alias bsant='bs &&
+    SUPPORTPATH=/Users/patkujawa/workspace/support && \
+    PYEXECPATH=`which python2.7` && \
+    cp build-user.properties.mac build-user.properties && \
+    sed -E -i .bak -e "s%SUPPORT=(.+)%SUPPORT=$SUPPORTPATH%" build-user.properties && \
+    sed -E -i "" -e "s%python.executable=(.+)%python.executable=$PYEXECPATH%" build-user.properties && \
+    cp settingslocal.py.dev settingslocal.py && \
+    time ant full'
+alias bsrun='bs && ./manage.py runserver 0.0.0.0:8001'
+alias bsaccount='echo George,Lesica,george,blerg,,Workiva,george.lesica@workiva.com,666-666-6667,555-555-5556,444-444-4445,333-333-3334,2131 North Loop Drive,,,Ames,IA,50011 > ~/Workspace/bigsky/tools/bulkdata/accounts.csv'
+alias bsreset='bs && bsaccount && mkdir -p datastore && chmod og+w datastore && python tools/erase_reset_data.py --admin="george" --password="blerg"'
+alias bsfonts='bs && python tools/remote_api/upload_font.py ../font/fonts/general && python tools/remote_api/upload_font.py ../font/fonts/restricted --wf-enable'
+
+# HVR
+alias books='cd ~/Workspace/books && workon books'
+alias bslinkdocviewerassets='bs && ./tools/link_assets.py sky.docviewer assets'
+alias bsdocviewerpip='bs && \
+    { pip uninstall -y sky-docviewer; pip install -e ../wf-js-document-viewer; } && \
+        ./tools/link_assets.py sky.docviewer assets'
+alias bsdocviewerinstall='bslinkdocviewerassets && bsdocviewerpip'
+
+# Binders
+alias bslinkbooksassets='bs && ./tools/link_assets.py wf.apps.books assets'
+alias bsbookspip='bs && \
+    { pip uninstall -y wf-books; pip install -e ../books; } && \
+        ./tools/link_assets.py wf.apps.books assets'
+alias bsbooksinstall='bslinkbooksassets && bsbookspip'
